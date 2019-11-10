@@ -52,8 +52,16 @@
           </reportSets>
         </plugin>
         
-         <!-- modification de la pom pour generer un jar-->
-       <plugin>
+       <!-- modification de la pom pour le findbug-->
+        <plugin>
+        	<groupId>org.codehaus.mojo</groupId>
+        	<artifactId>findbugs-maven-plugin</artifactId>
+        	<version>3.0.6-SNAPSHOT</version>
+      	</plugin>
+      	
+         <!-- modification de la pom pour ajouter jar -->
+    
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <version>3.2.0</version>
@@ -64,14 +72,9 @@
         </configuration>
        
       </plugin>
-        
-       <!-- modification de la pom pour le findbug-->
-        <plugin>
-        	<groupId>org.codehaus.mojo</groupId>
-        	<artifactId>findbugs-maven-plugin</artifactId>
-        	<version>3.0.6-SNAPSHOT</version>
-      	</plugin>
-      	
+      
+
+        	
      <!-- modification de la pom pour ajouter jar avec ses dependances-->
      <plugin>
 		 <artifactId>maven-assembly-plugin</artifactId>
@@ -88,6 +91,8 @@
  </plugin>
 
     </plugins>
+    
+   
 
   </reporting>
 </project>
