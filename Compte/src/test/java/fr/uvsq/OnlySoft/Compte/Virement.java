@@ -11,6 +11,7 @@ public class Virement {
 		Double montant=10.5;
 		Double solde1=30.5;
 		Double solde2=0.0;
+		Double solde3;
 		if(montant>0){
 			solde1=solde1-montant;
 			solde2=solde2+montant;
