@@ -9,9 +9,6 @@
 
   <name>Compte</name>
   <url>http://maven.apache.org</url>
-  
-
-  
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,8 +24,11 @@
   </dependencies>
   
   <!-- generation de la java doc -->
-   <reporting>
+
+	
+<build>
     <plugins>
+      
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
@@ -39,17 +39,11 @@
       </plugin>
       
         <!-- modification de la pom pour ajouter le checkstyle -->
-        <plugin>
+         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
           <version>3.1.0</version>
-          <reportSets>
-            <reportSet>
-              <reports>
-                <report>checkstyle</report>
-              </reports>
-            </reportSet>
-          </reportSets>
+          
         </plugin>
         
        <!-- modification de la pom pour le findbug-->
@@ -88,11 +82,33 @@
 		 <descriptorRef>jar-with-dependencies</descriptorRef>
 		 </descriptorRefs>
 		 </configuration>
- </plugin>
+ 	</plugin>
+ 	
+	<plugin>
+		 <artifactId>maven-assembly-plugin</artifactId>
+		 <configuration>
+		 <archive>
+		 <manifest>
+		 <mainClass>fully.qualified.MainClass</mainClass>
+		 </manifest>
+		 </archive>
+		 <descriptorRefs>
+		 <descriptorRef>jar-with-dependencies</descriptorRef>
+		 </descriptorRefs>
+		 </configuration>
+		 <executions>
+		 <execution>
+		 <id>make-assembly</id> <!-- Cet attribut est utilisé lors des fusions avec héritage -->
+		 
+		 <goals>
+		 <goal>single</goal>
+		 </goals>
+		 </execution>
+		 </executions>
+  </plugin>
 
     </plugins>
-    
-   
 
-  </reporting>
+   </build>
+<reporting></reporting>
 </project>
