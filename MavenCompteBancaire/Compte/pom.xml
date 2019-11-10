@@ -9,6 +9,9 @@
 
   <name>Compte</name>
   <url>http://maven.apache.org</url>
+  
+
+  
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,4 +25,41 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
+  <!-- generation de la java doc -->
+   <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+       
+        </configuration>
+      </plugin>
+      
+        <!-- modification de la pom pour ajouter le checkstyle -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>3.1.0</version>
+          <reportSets>
+            <reportSet>
+              <reports>
+                <report>checkstyle</report>
+              </reports>
+            </reportSet>
+          </reportSets>
+        </plugin>
+        
+       <!-- modification de la pom pour le findbug-->
+        <plugin>
+        	<groupId>org.codehaus.mojo</groupId>
+        	<artifactId>findbugs-maven-plugin</artifactId>
+        	<version>3.0.6-SNAPSHOT</version>
+      	</plugin>
+
+    </plugins>
+
+  </reporting>
 </project>
