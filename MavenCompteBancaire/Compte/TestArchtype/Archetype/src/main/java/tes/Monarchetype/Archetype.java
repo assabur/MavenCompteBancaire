@@ -1,9 +1,9 @@
-package foo.MonArchetype;
+package tes.Monarchetype;
 
-public class MonArchetype 
+public class Archetype 
 {
 private Double  solde ;
-public MonArchetype(double solde) 
+public Archetype(double solde) 
 {
 	if (solde<0) solde=0.0;
 	this.solde=solde;
@@ -34,7 +34,7 @@ public double debiter(double montant)
 
 //transfert vers un autre compte
 
-public void virement(MonArchetype a, MonArchetype b,double montant)
+public void virement(Archetype a, Archetype b,double montant)
 
 {
 	if( montant>0)

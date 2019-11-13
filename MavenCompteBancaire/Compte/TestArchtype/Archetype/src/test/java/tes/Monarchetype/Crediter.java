@@ -1,4 +1,4 @@
-package foo.MonArchetype;
+package tes.Monarchetype;
 
 import static org.junit.Assert.*;
 

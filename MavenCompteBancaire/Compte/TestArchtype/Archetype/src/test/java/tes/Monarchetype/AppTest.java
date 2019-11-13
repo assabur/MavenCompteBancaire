@@ -1,4 +1,4 @@
-package foo.MonArchetype;
+package tes.Monarchetype;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

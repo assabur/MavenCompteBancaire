@@ -1,4 +1,4 @@
-package foo.MonArchetype;
+package tes.Monarchetype;
 
 /**
  * Hello world!
@@ -24,12 +24,12 @@ public class App
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>foo</groupId>
-  <artifactId>MonArchetype</artifactId>
-  <version>1</version>
+  <groupId>tes.Monarchetype</groupId>
+  <artifactId>Archetype</artifactId>
+  <version>1.1.1</version>
   <packaging>jar</packaging>
 
-  <name>MonArchetype</name>
+  <name>Archetype</name>
   <url>http://maven.apache.org</url>
   
 
