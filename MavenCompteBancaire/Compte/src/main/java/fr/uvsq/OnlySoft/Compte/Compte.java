@@ -1,12 +1,25 @@
 package fr.uvsq.OnlySoft.Compte;
+import fr.uvsq.OnlySoft.CompteException.*;
+
 
 public class Compte 
 {
-private Double  solde ;
-public Compte(double solde) 
-{
-	if (solde<0) solde=0.0;
-	this.solde=solde;
+private Double  solde=0.0 ;
+
+
+public Compte() 
+{    
+}
+
+public Compte(double solde) throws  CrediterExceptions 
+{  
+		    if(solde < 0)
+		      throw new CrediterExceptions(solde);
+		    else
+		    {
+		    	this.solde=solde;
+		    }
+		  
 }
 
 //afficher ma position
@@ -18,31 +31,48 @@ public Double getSolde()
 
 //crediter mon compte
 
-public double crediter(double montant)
+
+public double crediter(double montant) throws  CrediterExceptions
 {
-	if (montant<=0) return -1;
-	return solde=solde +montant;
+	
+    if(montant<=0)
+	      throw new CrediterExceptions(montant);
+	    else
+	    {
+	    	return this.solde=this.solde +montant;
+	    }
 }
 
 //debiter
 
-public double debiter(double montant)
+public double debiter(double montant)  throws  DebiterExceptions
 {
-	if (solde<=0||solde <montant) return -1;
-	return solde=solde-montant;
+	
+	if(solde-montant<0)
+	      throw new DebiterExceptions(solde);
+	    else
+	    {
+	    	return this.solde=this.solde-montant;
+	    }
+	
 }
 
 //transfert vers un autre compte
 
-public void virement(Compte a, Compte b,double montant)
-
+public void virement(Compte b,double montant) throws CrediterExceptions,DebiterExceptions,VirementExceptions
 {
-	if( montant>0)
-	{
-		double c1 =a.getSolde();
-		b.crediter(montant);
-		a.debiter(c1-montant);	
-	}
+	if(montant<0)
+	      throw new VirementExceptions(montant);
+	    else
+	    {
+	    	try{
+	    		this.debiter(montant);
+	    	}catch (DebiterExceptions e) {
+			}
+	    	b.crediter(montant);
+	    }
+					
 }
+
 
 }

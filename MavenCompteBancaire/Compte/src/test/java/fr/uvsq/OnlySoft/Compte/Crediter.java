@@ -1,5 +1,5 @@
 package fr.uvsq.OnlySoft.Compte;
-
+import fr.uvsq.OnlySoft.CompteException.*;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -8,23 +8,20 @@ public class Crediter {
 	
 
 	@Test
-	public void testCrediter()
+	public void testCrediter () throws CrediterExceptions
 	{
-		double solde=30.0;
-		double montant=10.2;
-				 
-		if (montant<=0) 
-		{
-			
-			assertEquals("montant inf � 0",10.0, 02, 0);
+		
+		double solde=-30.0;
+		
+		Compte v = null;
+		try {                   
+		    v = new Compte(solde);         
+		} catch (CrediterExceptions e) {   }   
+		finally{
+		    if(v == null)
+		    	v = new Compte(0.0);
 		}
-		else
-		{	
-		solde=solde +montant;
-
-		assertEquals("montant sup � 0", 40.2, solde, 0);	
-		}
-
+		
 	}
 	
 	
