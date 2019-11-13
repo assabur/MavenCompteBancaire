@@ -352,3 +352,7 @@
 2019-11-13 23:16:44,345 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\Prog_Eclipse\nouveau\MavenCompteBancaire\Compte\src\main\resources
 2019-11-13 23:16:44,347 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-11-13 23:16:44,347 [Worker-129] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\Prog_Eclipse\nouveau\MavenCompteBancaire\Compte\src\test\resources
+2019-11-13 23:37:10,200 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-13 23:37:10,201 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\Prog_Eclipse\nouveau\MavenCompteBancaire\Compte\src\main\resources
+2019-11-13 23:37:10,202 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-11-13 23:37:10,202 [Worker-146] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory F:\Prog_Eclipse\nouveau\MavenCompteBancaire\Compte\src\test\resources
